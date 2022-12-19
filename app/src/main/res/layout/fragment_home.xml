@@ -13,9 +13,10 @@
         android:id="@+id/drawerLayout">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.HomeFragment">
 
 
@@ -23,10 +24,7 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintBottom_toTopOf="@+id/viewPager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -56,10 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     app:cardBackgroundColor="#E8EAF6"
-                    app:cardCornerRadius="8dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/cardView"
-                    app:layout_constraintStart_toEndOf="@+id/cardView"
-                    app:layout_constraintTop_toTopOf="@+id/cardView">
+                    app:cardCornerRadius="8dp">
 
                     <RelativeLayout
                         android:id="@+id/sortByBtn"
@@ -106,7 +101,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#BCF37D"
-                android:textSize="10dp"
+                android:textSize="5dp"
+                app:tabTextAppearance="@style/MyCustomTabText"
                 app:tabIndicatorColor="#2E7D32"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="#2E7D32"
@@ -118,8 +114,7 @@
             android:id="@+id/overDueLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="#D1F1AD"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+            app:cardBackgroundColor="#D1F1AD">
 
             <TextView
                 style="@style/TextAppearance.Material3.LabelMedium"
@@ -136,17 +131,11 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="#EAFBD7"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/overDueLayout">
-
-        </androidx.viewpager2.widget.ViewPager2>
+            android:layout_height="match_parent"
+            android:background="#EAFBD7"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/navView"

@@ -7,7 +7,8 @@
 
     </data>
 
-    <FrameLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MyHistoryFragment">
@@ -68,5 +69,68 @@
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
-    </FrameLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/nav_header_menu"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header_layout"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:id="@+id/bottomBtnClick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#A6A5A5"
+                    android:layout_alignParentTop="true"
+                    />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="20dp"
+                    app:cardBackgroundColor="#00C853"
+                    app:cardCornerRadius="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="XC"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xtreme Clean and Carpet Care"
+                    android:layout_gravity="bottom"
+                    android:textColor="#807F7F"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_toEndOf="@+id/cardView"
+                    android:layout_marginBottom="30dp"/>
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.navigation.NavigationView>
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

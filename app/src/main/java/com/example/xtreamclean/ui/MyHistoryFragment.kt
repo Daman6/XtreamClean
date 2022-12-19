@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.xtreamclean.R
 import com.example.xtreamclean.adapter.MyHistory_TaskRecyAdapter
 import com.example.xtreamclean.adapter.TaskRecyAdapter
 import com.example.xtreamclean.databinding.FragmentMyHistoryBinding
@@ -44,7 +47,36 @@ class MyHistoryFragment : Fragment() {
             adapter = mAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
+        setUpNavMenu()
     }
 
 
+    private fun setUpNavMenu(){
+        binding.hamMenuBtn.setOnClickListener {
+            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
+                GravityCompat.START
+            );
+            else binding.drawerLayout.closeDrawer(GravityCompat.END);
+
+        }
+
+
+
+
+        binding.navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.mytaskBtn ->{
+                    findNavController().navigate(R.id.homeFragment)
+                }
+                R.id.offerBtn -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_offerFragment)
+                }
+                R.id.myHistoryBtn -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_myHistoryFragment)
+                }
+
+            }
+            true
+        }
+    }
 }

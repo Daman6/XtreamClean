@@ -69,33 +69,7 @@ class HomeFragment : Fragment() {
 
         setupViewPager()
         setupTabLayout()
-
-
-        binding.hamMenuBtn.setOnClickListener {
-            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
-                GravityCompat.START
-            );
-            else binding.drawerLayout.closeDrawer(GravityCompat.END);
-
-        }
-
-
-
-
-        binding.navView.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.mytaskBtn -> Toast.makeText(requireContext(), "Item1", Toast.LENGTH_SHORT)
-                    .show()
-                R.id.offerBtn -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_offerFragment)
-                }
-                R.id.myHistoryBtn -> {
-                    findNavController().navigate(R.id.action_homeFragment_to_myHistoryFragment)
-                }
-
-            }
-            true
-        }
+        setUpNavMenu()
     }
 
     private fun setupTabLayout() {
@@ -110,6 +84,35 @@ class HomeFragment : Fragment() {
     private fun setupViewPager() {
         val adapter = ViewPagerAdapter(requireActivity(), 4)
         binding.viewPager.adapter = adapter
+    }
+
+    private fun setUpNavMenu(){
+        binding.hamMenuBtn.setOnClickListener {
+            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
+                GravityCompat.START
+            );
+            else binding.drawerLayout.closeDrawer(GravityCompat.END);
+
+        }
+
+
+
+
+        binding.navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.mytaskBtn ->{
+                    findNavController().navigate(R.id.homeFragment)
+                }
+                R.id.offerBtn -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_offerFragment)
+                }
+                R.id.myHistoryBtn -> {
+                    findNavController().navigate(R.id.action_homeFragment_to_myHistoryFragment)
+                }
+
+            }
+            true
+        }
     }
 
 }

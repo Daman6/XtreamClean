@@ -1,93 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.OfferFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:id="@+id/notaskLayout"
+    <data>
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/drawerLayout"
+        tools:context=".ui.OfferFragment">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <LinearLayout
+            android:id="@+id/notaskLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintBottom_toTopOf="@+id/viewPager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#BCF37D"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_constraintBottom_toTopOf="@+id/viewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-                <ImageView
-                    android:id="@+id/hamMenuBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_round_menu_24" />
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#BCF37D"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <ImageView
+                        android:id="@+id/hamMenuBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_round_menu_24" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.LabelLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Offers"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black" />
+
+
+                    <TextView
+                        android:id="@+id/acceptAllBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="Accept all"
+                        android:textColor="@color/black"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_round_search_24" />
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_round_chat_24" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:text="No offers at this time." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="We will notify you when you have an offered task." />
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/nav_header_menu"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header_layout"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:id="@+id/bottomBtnClick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#A6A5A5"
+                    android:layout_alignParentTop="true"
+                    />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="20dp"
+                    app:cardBackgroundColor="#00C853"
+                    app:cardCornerRadius="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="XC"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"/>
+
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
-                    style="@style/TextAppearance.Material3.LabelLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Offers"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black" />
+                    android:text="Xtreme Clean and Carpet Care"
+                    android:layout_gravity="bottom"
+                    android:textColor="#807F7F"
+                    android:layout_marginStart="10dp"
+                    android:layout_centerVertical="true"
+                    style="@style/TextAppearance.Material3.LabelSmall"
+                    android:layout_toEndOf="@+id/cardView"
+                    android:layout_marginBottom="30dp"/>
+
+            </RelativeLayout>
 
 
-
-                <TextView
-                    android:id="@+id/acceptAllBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:text="Accept all"
-                    android:textColor="@color/black"
-                    android:layout_marginEnd="10dp"
-                    android:src="@drawable/ic_round_search_24" />
+        </com.google.android.material.navigation.NavigationView>
 
 
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-
-
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="fitCenter"
-            android:layout_marginTop="80dp"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/ic_round_chat_24"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            style="@style/TextAppearance.Material3.LabelMedium"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"
-            android:text="No offers at this time." />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            style="@style/TextAppearance.Material3.LabelMedium"
-            android:textColor="@color/black"
-            android:layout_marginTop="5dp"
-            android:text="We will notify you when you have an offered task." />
-
-    </LinearLayout>
-
-
-</FrameLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
