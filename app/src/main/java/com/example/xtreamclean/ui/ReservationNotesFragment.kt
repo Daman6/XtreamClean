@@ -8,11 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.xtreamclean.R
 import com.example.xtreamclean.databinding.FragmentForgetBinding
+import com.example.xtreamclean.databinding.FragmentReservationNotesBinding
 
 
-class ForgetFragment : Fragment() {
+class ReservationNotesFragment : Fragment() {
 
-    private lateinit var binding :FragmentForgetBinding
+    private lateinit var binding: FragmentReservationNotesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -25,7 +26,7 @@ class ForgetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentForgetBinding.inflate(layoutInflater)
+        binding =  FragmentReservationNotesBinding.inflate(layoutInflater)
         return binding.root
     }
 

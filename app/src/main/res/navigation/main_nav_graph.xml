@@ -13,6 +13,21 @@
         <action
             android:id="@+id/action_homeFragment_to_customBottomSheetDialogFragment"
             app:destination="@id/customBottomSheetDialogFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_offerFragment"
+            app:destination="@id/offerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myHistoryFragment"
+            app:destination="@id/myHistoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myHistoryFragment2"
+            app:destination="@id/myHistoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_headerBottomFragment"
+            app:destination="@id/headerBottomFragment" />
     </fragment>
     <dialog
         android:id="@+id/customBottomSheetDialogFragment"
@@ -36,4 +51,74 @@
         android:name="com.example.xtreamclean.ui.ForgetFragment"
         android:label="fragment_forget"
         tools:layout="@layout/fragment_forget" />
+    <fragment
+        android:id="@+id/offerFragment"
+        android:name="com.example.xtreamclean.ui.OfferFragment"
+        android:label="fragment_offer"
+        tools:layout="@layout/fragment_offer" />
+    <fragment
+        android:id="@+id/myHistoryFragment"
+        android:name="com.example.xtreamclean.ui.MyHistoryFragment"
+        android:label="MyHistoryFragment"
+        tools:layout="@layout/fragment_my_history"/>
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.xtreamclean.ui.TaskDetailFragment"
+        android:label="fragment_task_detail"
+        tools:layout="@layout/fragment_task_detail" >
+        <action
+            android:id="@+id/action_taskDetailFragment_to_costFragment"
+            app:destination="@id/costFragment" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_reservationNotesFragment"
+            app:destination="@id/reservationNotesFragment" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_issuesFragment"
+            app:destination="@id/issuesFragment" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/costFragment"
+        android:name="com.example.xtreamclean.ui.CostFragment"
+        android:label="fragment_cost"
+        tools:layout="@layout/fragment_cost" />
+    <fragment
+        android:id="@+id/headerBottomFragment"
+        android:name="com.example.xtreamclean.ui.HeaderBottomFragment"
+        android:label="fragment_header_bottom"
+        tools:layout="@layout/fragment_header_bottom" >
+        <action
+            android:id="@+id/action_headerBottomFragment_to_labsFragment"
+            app:destination="@id/labsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/issuesFragment"
+        android:name="com.example.xtreamclean.ui.IssuesFragment"
+        android:label="IssuesFragment"
+        tools:layout="@layout/fragment_issues"/>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.xtreamclean.ui.SummaryFragment"
+        android:label="fragment_summary"
+        tools:layout="@layout/fragment_summary" />
+    <fragment
+        android:id="@+id/reservationNotesFragment"
+        android:name="com.example.xtreamclean.ui.ReservationNotesFragment"
+        android:label="fragment_reservation_notes"
+        tools:layout="@layout/fragment_reservation_notes" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.xtreamclean.ui.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/labsFragment"
+        android:name="com.example.xtreamclean.ui.LabsFragment"
+        android:label="fragment_labs"
+        tools:layout="@layout/fragment_labs" />
 </navigation>

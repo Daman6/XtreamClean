@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.OfferFragment">
+
+    <LinearLayout
+        android:id="@+id/notaskLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintBottom_toTopOf="@+id/viewPager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="#BCF37D"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:id="@+id/hamMenuBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_round_menu_24" />
+
+                <TextView
+                    style="@style/TextAppearance.Material3.LabelLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Offers"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black" />
+
+
+
+                <TextView
+                    android:id="@+id/acceptAllBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="Accept all"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_round_search_24" />
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_round_chat_24"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/TextAppearance.Material3.LabelMedium"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:text="No offers at this time." />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/TextAppearance.Material3.LabelMedium"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:text="We will notify you when you have an offered task." />
+
+    </LinearLayout>
+
+
+</FrameLayout>

@@ -31,7 +31,7 @@
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <ImageView
-                    android:id="@+id/hamMenuBtn"
+                    android:id="@+id/closeBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_round_close_24" />

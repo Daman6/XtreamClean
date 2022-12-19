@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.xtreamclean.R
-import com.example.xtreamclean.databinding.FragmentForgetBinding
+import com.example.xtreamclean.databinding.FragmentIssuesBinding
 
 
-class ForgetFragment : Fragment() {
+class IssuesFragment : Fragment() {
 
-    private lateinit var binding :FragmentForgetBinding
+    private lateinit var binding : FragmentIssuesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -25,16 +25,15 @@ class ForgetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentForgetBinding.inflate(layoutInflater)
+        binding = FragmentIssuesBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.closeBtn.setOnClickListener {
+        binding.backBtn.setOnClickListener {
             findNavController().popBackStack()
         }
     }
-
 
 }

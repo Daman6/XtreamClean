@@ -7,10 +7,7 @@
 
     </data>
 
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/drawerLayout">
+
 
 
     <LinearLayout
@@ -19,20 +16,7 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/appBar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_round_menu_24"
-                app:title="My Task"/>
-
-
-        </com.google.android.material.appbar.AppBarLayout>
 
 
         <androidx.fragment.app.FragmentContainerView
@@ -45,13 +29,5 @@
 
     </LinearLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:menu="@menu/nav_header_menu"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"/>
 
-    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

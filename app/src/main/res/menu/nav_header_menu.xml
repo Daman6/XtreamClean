@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/mItem1"
-        android:title="Item 1"/>
+        android:id="@+id/mytaskBtn"
+        android:title="My Tasks"
+        android:icon="@drawable/ic_outline_fact_check_24"/>
     <item
-        android:id="@+id/mItem2"
-        android:title="Item 2"/>
+        android:id="@+id/offerBtn"
+        android:title="Offers"
+        />
     <item
-        android:id="@+id/mItem3"
-        android:title="Item 3"/>
+        android:id="@+id/myHistoryBtn"
+        android:icon="@drawable/ic_outline_history_24"
+        android:title="My History"/>
 </menu>

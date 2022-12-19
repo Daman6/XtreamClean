@@ -7,16 +7,18 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xtreamclean.R
+import com.example.xtreamclean.databinding.MyhistoryTaskDateItemLayoutBinding
+import com.example.xtreamclean.databinding.MyhistoryTaskItemLayoutBinding
 import com.example.xtreamclean.databinding.TaskItemLayoutBinding
 
-class TaskRecyAdapter (private val list : List<Int>): RecyclerView.Adapter<TaskRecyAdapter.TaskRecyAdapterViewHolder>(){
+class MyHistory_TaskChildRecyAdapter (private val list : List<Int>): RecyclerView.Adapter<MyHistory_TaskChildRecyAdapter.TaskRecyAdapterViewHolder>(){
 
-    class TaskRecyAdapterViewHolder(var binding : TaskItemLayoutBinding): RecyclerView.ViewHolder(binding.root)
+    class TaskRecyAdapterViewHolder(var binding : MyhistoryTaskItemLayoutBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskRecyAdapterViewHolder {
-        val binding : TaskItemLayoutBinding = DataBindingUtil.inflate(
+        val binding : MyhistoryTaskItemLayoutBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            R.layout.task_item_layout,
+            R.layout.myhistory_task_item_layout,
             parent,
             false
         )
@@ -27,15 +29,15 @@ class TaskRecyAdapter (private val list : List<Int>): RecyclerView.Adapter<TaskR
         val current = list[position]
         holder.itemView.apply {
 //            holder.binding.title.text= current.title.toString()
-            setOnClickListener {
+//            setOnClickListener {
 //                val bundle = Bundle()
 //                bundle.putString("title",current.title)
 //                bundle.putInt("id",current.id)
 //                bundle.putInt("userId",current.userId)
 //                bundle.putString("body",current.body)
-
-                findNavController().navigate(R.id.action_homeFragment_to_taskDetailFragment)
-            }
+//
+//                findNavController().navigate(R.id.action_homeFragment_to_contentFragment,bundle)
+//            }
         }
 
 

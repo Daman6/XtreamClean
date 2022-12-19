@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:nestedScrollingEnabled="true"
+        tools:context=".ui.TaskDetailFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_background" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="start"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginStart="20dp"
+                        app:cardBackgroundColor="#00C853"
+                        app:cardCornerRadius="20dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_round_arrow_back_24" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        app:cardBackgroundColor="#00C853"
+                        app:cardCornerRadius="20dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_round_turn_right_24" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="bottom"
+                        app:cardBackgroundColor="#7F000000">
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="10dp"
+                            android:paddingHorizontal="30dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/addressTitleText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Test Street, 8"
+                                android:textColor="@color/white"
+                                style="@style/TextAppearance.Material3.BodyLarge" />
+
+                            <TextView
+                                android:id="@+id/close"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Close"
+                                android:textColor="@color/white"
+                                style="@style/TextAppearance.Material3.BodyLarge" />
+
+
+                            <TextView
+                                android:id="@+id/dutyText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Unit 10/29 Weatherly Close"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/white"
+                                style="@style/TextAppearance.Material3.BodyMedium" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.cardview.widget.CardView>
+
+                </FrameLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingHorizontal="20dp">
+
+                    <TextView
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/taskCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guest Stay General Departure Clean"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:cardBackgroundColor="#2E7D32"
+                        android:layout_alignParentEnd="true"
+                        app:cardCornerRadius="8dp">
+
+                        <RelativeLayout
+                            android:id="@+id/highlayout"
+                            android:layout_width="wrap_content"
+                            android:paddingHorizontal="12dp"
+                            android:layout_height="wrap_content">
+
+
+                            <ImageView
+                                android:id="@+id/arrowIcon"
+                                android:layout_width="15dp"
+                                android:layout_height="20dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_round_arrow_upward_24" />
+
+
+                            <TextView
+                                android:id="@+id/text"
+                                style="@style/TextAppearance.Material3.LabelSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/arrowIcon"
+                                android:text="High"
+                                android:layout_marginStart="4dp"
+                                android:textColor="@color/white"
+                                android:textSize="10dp" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/dueOnText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Due on"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@id/taskCategory"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                    <ImageView
+                        android:id="@+id/calendarIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/dueOnText"
+                        android:src="@drawable/ic_outline_calendar_month_24" />
+
+                    <TextView
+                        android:id="@+id/dateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sep 3"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/dueOnText"
+                        android:textColor="#6C6B6B"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/calendarIcon"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                    <TextView
+                        android:id="@+id/checkOutText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Checkout"
+                        android:layout_marginTop="20dp"
+                        android:layout_below="@id/calendarIcon"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                    <ImageView
+                        android:id="@+id/checkoutIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/checkOutText"
+                        android:src="@drawable/ic_outline_calendar_month_24" />
+
+                    <TextView
+                        android:id="@+id/checkOutdateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sep 3,10:02 AM"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/checkOutText"
+                        android:textColor="#6C6B6B"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/checkoutIcon"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                    <TextView
+                        android:id="@+id/checkInText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Next Check-in"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_below="@id/calendarIcon"
+                        android:layout_alignParentEnd="true"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                    <ImageView
+                        android:id="@+id/checkinIcon"
+                        android:layout_width="15dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/checkInText"
+                        android:layout_toStartOf="@+id/checkIndateText"
+                        android:src="@drawable/ic_outline_calendar_month_24" />
+
+                    <TextView
+                        android:id="@+id/checkIndateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sep 3,10:02 AM"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/checkInText"
+                        android:textColor="#6C6B6B"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_alignParentEnd="true"
+                        style="@style/TextAppearance.Material3.BodyMedium" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="3"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="130dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="1"
+                        app:cardMaxElevation="10dp"
+                        android:layout_margin="5dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/requirementText"
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:drawableStart="@drawable/ic_outline_fact_check_24"
+                                android:text="18/18"
+                                android:textColor="#6C6B6B" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/requirementText"
+                                android:layout_centerInParent="true"
+                                android:text="Requirements"
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:textColor="#6C6B6B" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="130dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardMaxElevation="10dp"
+                        app:cardCornerRadius="8dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageIcon2"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_outline_insert_photo_24" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageIcon2"
+                                android:layout_centerInParent="true"
+                                android:text="Photos"
+                                android:textColor="#6C6B6B" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="130dp"
+                        android:layout_height="90dp"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="8dp"
+                        app:cardMaxElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imageIcon3"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_outline_comment_24" />
+
+                            <TextView
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageIcon3"
+                                android:layout_centerInParent="true"
+                                android:text="Comments"
+                                android:textColor="#6C6B6B" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#959595" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Property"
+                    android:textColor="#6C6B6B"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    style="@style/TextAppearance.Material3.TitleLarge" />
+
+                <RelativeLayout
+                    android:id="@+id/issueTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp">
+
+                    <ImageView
+                        android:id="@+id/issuesIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_outline_calendar_month_24" />
+
+                    <TextView
+                        android:id="@+id/issueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Issues"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6C6B6B"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/issuesIcon"
+                        style="@style/TextAppearance.Material3.LabelLarge" />
+
+                    <ImageView
+                        android:id="@+id/forwardIcon1"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#959595" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/propertyTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp">
+
+                    <ImageView
+                        android:id="@+id/propertyIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_outline_home_24" />
+
+                    <TextView
+                        android:id="@+id/propertyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Property Details"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6C6B6B"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/propertyIcon"
+                        style="@style/TextAppearance.Material3.LabelLarge" />
+
+                    <ImageView
+                        android:id="@+id/forwardIcon2"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#959595" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reservationTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp">
+
+                    <ImageView
+                        android:id="@+id/reservationIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_outline_king_bed_24" />
+
+                    <TextView
+                        android:id="@+id/reservationText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Reservation Notes"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6C6B6B"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/reservationIcon"
+                        style="@style/TextAppearance.Material3.LabelLarge" />
+
+                    <ImageView
+                        android:id="@+id/forwardIcon3"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#959595" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task"
+                    android:textColor="#6C6B6B"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    style="@style/TextAppearance.Material3.TitleLarge" />
+
+                <RelativeLayout
+                    android:id="@+id/costTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp">
+
+                    <ImageView
+                        android:id="@+id/costIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_outline_calendar_month_24" />
+
+                    <TextView
+                        android:id="@+id/costText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Costs"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6C6B6B"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/costIcon"
+                        style="@style/TextAppearance.Material3.LabelLarge" />
+
+                    <ImageView
+                        android:id="@+id/forwardIcon4"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#959595" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/taskDetailTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp">
+
+                    <ImageView
+                        android:id="@+id/taskDetailIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_outline_home_24" />
+
+                    <TextView
+                        android:id="@+id/taskDetailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Task details"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6C6B6B"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/taskDetailIcon"
+                        style="@style/TextAppearance.Material3.LabelLarge" />
+
+                    <ImageView
+                        android:id="@+id/forwardIcon5"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#959595" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/summaryTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="15dp">
+
+                    <ImageView
+                        android:id="@+id/summaryIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/ic_outline_king_bed_24" />
+
+                    <TextView
+                        android:id="@+id/summaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Summary"
+                        android:layout_centerVertical="true"
+                        android:textColor="#6C6B6B"
+                        android:gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:layout_toEndOf="@+id/summaryIcon"
+                        style="@style/TextAppearance.Material3.LabelLarge" />
+
+                    <ImageView
+                        android:id="@+id/forwardIcon6"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#959595" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/white" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+</layout>
