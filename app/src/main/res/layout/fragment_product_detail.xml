@@ -1,80 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.ProductDetailFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.HomeFragment">
+        tools:context=".ui.ProductDetailFragment">
 
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_height="match_parent"
+            tools:context=".ui.HomeFragment">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#BCF37D"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <ImageView
-                    android:id="@+id/hamMenuBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:tint="@color/black"
-                    android:src="@drawable/ic_round_arrow_back_24" />
-
-                <TextView
-                    android:id="@+id/title"
-                    style="@style/TextAppearance.Material3.LabelLarge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:text="Lenart"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black" />
-
-            </androidx.appcompat.widget.Toolbar>
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#BCF37D"
-                android:textSize="10dp"
-                app:tabIndicatorColor="#2E7D32"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="#2E7D32"
-                app:tabTextColor="#474646" />
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/mainGreen"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <ImageView
+                        android:id="@+id/hamMenuBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:tint="@color/black"
+                        android:src="@drawable/ic_round_arrow_back_24" />
+
+                    <TextView
+                        android:id="@+id/title"
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="Lenart"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/mainGreen"
+                    android:textSize="10dp"
+                    app:tabIndicatorColor="#2E7D32"
+                    app:tabMode="fixed"
+                    app:tabSelectedTextColor="#2E7D32"
+                    app:tabTextColor="#474646" />
+
+            </com.google.android.material.appbar.AppBarLayout>
 
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="#EAFBD7"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
-        </androidx.viewpager2.widget.ViewPager2>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.viewpager2.widget.ViewPager2>
 
 
-</FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+</layout>

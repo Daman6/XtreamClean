@@ -16,7 +16,7 @@
             android:id="@+id/notaskLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#D0F1B9"
+            android:background="@color/lightGreen"
             android:orientation="vertical">
 
             <com.google.android.material.appbar.AppBarLayout
@@ -32,7 +32,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#BCF37D"
+                    android:background="@color/mainGreen"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                     <ImageView
@@ -43,7 +43,7 @@
                         app:tint="@color/black" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.LabelLarge"
+                        style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Details"
@@ -281,7 +281,7 @@
                         android:layout_height="wrap_content"
                         android:text="Company"
                         android:textColor="#676565"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="10dp"
                         style="@style/TextAppearance.Material3.LabelLarge" />
 
                     <TextView

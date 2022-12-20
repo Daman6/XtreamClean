@@ -33,6 +33,10 @@ class CostFragment : Fragment() {
         binding.backBtn.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        binding.applyBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_costFragment_to_costFilterFragment)
+        }
     }
 
 

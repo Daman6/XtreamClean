@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.findNavController
 import com.example.xtreamclean.R
 import com.example.xtreamclean.databinding.FragmentHeaderBottomBinding
@@ -34,6 +35,38 @@ class HeaderBottomFragment : Fragment() {
         binding.labsTextLayout.setOnClickListener {
             findNavController().navigate(R.id.action_headerBottomFragment_to_labsFragment)
         }
+        binding.notificationTextLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_headerBottomFragment_to_notificationFragment)
+        }
+        binding.profileTextLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_headerBottomFragment_to_profileFragment)
+        }
+
+        binding.hamMenuBtn.setOnClickListener {
+            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
+                GravityCompat.START
+            );
+            else binding.drawerLayout.closeDrawer(GravityCompat.END);
+
+        }
+
+
+        binding.navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.mytaskBtn ->{
+                    findNavController().navigate(R.id.homeFragment)
+                }
+                R.id.offerBtn -> {
+                    findNavController().navigate(R.id.offerFragment)
+                }
+                R.id.myHistoryBtn -> {
+                    findNavController().navigate(R.id.myHistoryFragment)
+                }
+
+            }
+            true
+        }
+
     }
 
 }

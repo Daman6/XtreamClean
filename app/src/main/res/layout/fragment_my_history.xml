@@ -17,6 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:orientation="vertical">
 
             <com.google.android.material.appbar.AppBarLayout
@@ -32,17 +33,18 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#BCF37D"
+                    android:background="@color/mainGreen"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                     <ImageView
                         android:id="@+id/hamMenuBtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_round_menu_24" />
+                        android:src="@drawable/ic_round_arrow_back_24"
+                        app:tint="@color/black" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.LabelLarge"
+                        style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="My History"

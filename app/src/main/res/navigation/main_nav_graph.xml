@@ -81,12 +81,19 @@
         <action
             android:id="@+id/action_taskDetailFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/costFragment"
         android:name="com.example.xtreamclean.ui.CostFragment"
         android:label="fragment_cost"
-        tools:layout="@layout/fragment_cost" />
+        tools:layout="@layout/fragment_cost">
+        <action
+            android:id="@+id/action_costFragment_to_costFilterFragment"
+            app:destination="@id/costFilterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/headerBottomFragment"
         android:name="com.example.xtreamclean.ui.HeaderBottomFragment"
@@ -95,6 +102,12 @@
         <action
             android:id="@+id/action_headerBottomFragment_to_labsFragment"
             app:destination="@id/labsFragment" />
+        <action
+            android:id="@+id/action_headerBottomFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_headerBottomFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/issuesFragment"
@@ -121,4 +134,34 @@
         android:name="com.example.xtreamclean.ui.LabsFragment"
         android:label="fragment_labs"
         tools:layout="@layout/fragment_labs" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.xtreamclean.ui.NotificationFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/fragment_notification"
+        />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.xtreamclean.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.xtreamclean.ui.ProductDetailFragment"
+        android:label="ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <action
+            android:id="@+id/action_productDetailFragment_to_elementDetailFragment"
+            app:destination="@id/elementDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elementDetailFragment"
+        android:name="com.example.xtreamclean.ui.ElementDetailFragment"
+        android:label="ElementDetailFragment"
+        tools:layout="@layout/fragment_element_detail"/>
+    <fragment
+        android:id="@+id/costFilterFragment"
+        android:name="com.example.xtreamclean.ui.CostFilterFragment"
+        android:label="CostFilterFragment"
+        tools:layout="@layout/fragment_cost_filter"/>
 </navigation>

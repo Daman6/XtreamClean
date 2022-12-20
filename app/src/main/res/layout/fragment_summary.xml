@@ -10,6 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".ui.SummaryFragment">
 
         <LinearLayout
@@ -31,7 +32,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#BCF37D"
+                    android:background="@color/mainGreen"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                     <ImageView
@@ -42,10 +43,11 @@
                         app:tint="@color/black" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.LabelLarge"
+                        style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Summary"
+                        android:fontFamily="@font/myriadpro_regular"
                         android:layout_gravity="center"
                         android:textColor="@color/black" />
 
@@ -56,6 +58,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:text="Save"
+                        android:fontFamily="@font/myriadpro_regular"
                         android:textColor="@color/black"
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_round_search_24" />
@@ -84,6 +87,7 @@
                         android:layout_height="40dp"
                         android:text="Summary"
                         android:gravity="center"
+                        android:fontFamily="@font/myriadpro_regular"
                         android:drawablePadding="5dp"
                         android:drawableStart="@drawable/ic_outline_event_note_24"
                         android:textColor="#676565"

@@ -10,6 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         tools:context=".ui.CostFragment">
 
 
@@ -32,7 +33,7 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#BCF37D"
+                    android:background="@color/mainGreen"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                     <ImageView
@@ -43,11 +44,11 @@
                         app:tint="@color/black" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.LabelLarge"
+                        style="@style/TextAppearance.Material3.TitleLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Costs"
                         android:layout_gravity="center"
+                        android:text="Costs"
                         android:textColor="@color/black" />
 
 

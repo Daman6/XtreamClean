@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_round_warning_24"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/elementTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BalconyT"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_toEndOf="@+id/icon"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/elementSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BalconyT 1"
+            android:textColor="#6C6C6C"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_toEndOf="@+id/icon"
+            android:layout_below="@+id/elementTitle"
+            android:layout_marginStart="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#6C6C6C"
+            android:layout_below="@+id/elementSubTitle"
+            android:layout_marginTop="12dp" />
+
+    </RelativeLayout>
+
+</layout>

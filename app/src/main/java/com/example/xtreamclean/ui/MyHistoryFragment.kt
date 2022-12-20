@@ -53,10 +53,12 @@ class MyHistoryFragment : Fragment() {
 
     private fun setUpNavMenu(){
         binding.hamMenuBtn.setOnClickListener {
-            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
-                GravityCompat.START
-            );
-            else binding.drawerLayout.closeDrawer(GravityCompat.END);
+//            if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
+//                GravityCompat.START
+//            );
+//            else binding.drawerLayout.closeDrawer(GravityCompat.END);
+
+            findNavController().navigateUp()
 
         }
 

@@ -52,14 +52,8 @@ class HomeFragment : Fragment() {
 //        }
 
         binding.sortByBtn.setOnClickListener {
-
-//            sheetDailod = BottomSheetDialog(requireContext(),R.style.BottomSheeStyle)
-//            val view = LayoutInflater.from(requireContext()).inflate(R.layout.sortby_bottomsheet_layout)
-
             findNavController().navigate(R.id.action_homeFragment_to_customBottomSheetDialogFragment)
-//                CustomBottomSheetDialogFragment().apply {
-//                    show(parentFragmentManager, CustomBottomSheetDialogFragment.TAG)
-//            }
+
         }
 
         binding.bottomBtnClick.setOnClickListener {

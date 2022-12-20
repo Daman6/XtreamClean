@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E1EDD2"
+        android:background="@color/lightGreen"
         tools:context=".ui.ForgetFragment">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -27,7 +27,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#BCF37D"
+                android:background="@color/mainGreen"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <ImageView
@@ -42,7 +42,8 @@
                     android:text="Forgot Password"
                     android:layout_gravity="center"
                     android:textColor="@color/black"
-                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:fontFamily="@font/myriadpro_regular"
+                    style="@style/TextAppearance.Material3.TitleLarge"
                     android:layout_marginStart="30dp" />
 
 
@@ -59,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
+            android:fontFamily="@font/myriadpro_regular"
             android:text="Forgot Password?"
             android:textColor="@color/black" />
 
@@ -70,6 +72,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/txt1"
             android:gravity="center"
+            android:fontFamily="@font/myriadpro_regular"
             android:layout_marginTop="10dp"
             android:text="Don't worry Resetting your password is easy.\nEnter your registered email and we'll send\ninstruction"
             android:textColor="#615D5D" />
@@ -80,6 +83,7 @@
             android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:hint="Email"
+            android:fontFamily="@font/myriadpro_regular"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:layout_below="@id/txt2"
@@ -93,6 +97,7 @@
             android:textAllCaps="false"
             android:background="#00C853"
             android:textColor="@color/white"
+            android:fontFamily="@font/myriadpro_regular"
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_below="@+id/passwordEditText"
             android:layout_centerHorizontal="true"

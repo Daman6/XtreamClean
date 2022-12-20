@@ -53,6 +53,12 @@ class TaskDetailFragment : Fragment() {
         binding.taskDetailTextLayout.setOnClickListener {
             findNavController().navigate(R.id.action_taskDetailFragment_to_detailFragment)
         }
+        binding.propertyTextLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_taskDetailFragment_to_productDetailFragment)
+        }
+        binding.backBtn.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 }

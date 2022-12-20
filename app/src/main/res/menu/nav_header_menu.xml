@@ -9,6 +9,7 @@
     <item
         android:id="@+id/offerBtn"
         android:title="Offers"
+        android:icon="@drawable/ic_outline_event_note_24"
         />
     <item
         android:id="@+id/myHistoryBtn"
