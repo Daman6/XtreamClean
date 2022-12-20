@@ -13,7 +13,10 @@ import com.example.xtreamclean.adapter.ViewPagerAdapter
 import com.example.xtreamclean.bottomsheet.CustomBottomSheetDialogFragment
 import com.example.xtreamclean.databinding.FragmentHomeBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.tabs.TabLayoutMediator
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class HomeFragment : Fragment() {
@@ -21,7 +24,9 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mAdapter: TaskRecyAdapter
     private lateinit var mList: List<Int>
-    private lateinit var sheetDailod: BottomSheetDialog
+    private var outputDateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).apply {
+        timeZone = TimeZone.getTimeZone("UTC")
+    }
     val tabTitles = arrayOf(
         "Today", "Tomorrow", "Week", "All"
     )
@@ -59,6 +64,10 @@ class HomeFragment : Fragment() {
         binding.bottomBtnClick.setOnClickListener {
 
             findNavController().navigate(R.id.action_homeFragment_to_headerBottomFragment)
+        }
+
+        binding.searchIconBtn.setOnClickListener {
+            setUpDatePicker()
         }
 
         setupViewPager()
@@ -107,6 +116,22 @@ class HomeFragment : Fragment() {
             }
             true
         }
+    }
+
+    private fun setUpDatePicker(){
+        val picker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText("Select Date")
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .build()
+
+        picker.addOnPositiveButtonClickListener {
+            val dateSelected = outputDateFormat.format(it)
+            Toast.makeText(requireContext(), dateSelected, Toast.LENGTH_SHORT).show()
+        }
+        picker.addOnNegativeButtonClickListener {
+            Toast.makeText(requireContext(), "No Date Selected", Toast.LENGTH_SHORT).show()
+        }
+        picker.show(requireActivity().supportFragmentManager,"Date Picker")
     }
 
 }
