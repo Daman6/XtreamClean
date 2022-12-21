@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.innobuzztask.repo.DataRepo
+import com.example.innobuzztask.utils.Resource
 import com.example.innobuzztask.viewModel.DataViewModel
 import com.example.innobuzztask.viewModel.DataViewModelProviderFactory
 import com.example.xtreamclean.databinding.ActivityMainBinding
@@ -34,11 +36,9 @@ class MainActivity : AppCompatActivity() {
         viewModel  = ViewModelProvider(this,viewModelProviderFactory).get(DataViewModel::class.java)
 
         list = mutableListOf()
-        viewModel.getData.observe(this, Observer {
+        viewModel.getDataResponse("admin@admin.com","admin@123")
+        observeUserLogin()
 
-            Log.e("djbjsbd",it.data?.data?.email.toString())
-
-        })
 
 //        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
 //        binding.drawerLayout.addDrawerListener(toggle)
@@ -62,4 +62,22 @@ class MainActivity : AppCompatActivity() {
 //        }
 //        return super.onOptionsItemSelected(item)
 //    }
+
+    private fun observeUserLogin() {
+        viewModel.getData.observe(this, Observer {
+            when (it) {
+                is Resource.Loading -> {
+
+                }
+                is Resource.Success -> {
+                    Log.e("sacas",it.data?.data?.email.toString())
+                }
+
+                is Resource.Error -> {
+//                    Toast.makeText(requireContext(), "" + it.data!!.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+    }
+
 }

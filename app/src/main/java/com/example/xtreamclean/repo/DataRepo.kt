@@ -7,6 +7,6 @@ import retrofit2.Retrofit
 
 class DataRepo() {
 
-    suspend fun getAllData( )= RetrofitInstance.api.getData()
+    suspend fun getAllData(email:String,password:String )= RetrofitInstance.api.getData(email, password)
 
 }

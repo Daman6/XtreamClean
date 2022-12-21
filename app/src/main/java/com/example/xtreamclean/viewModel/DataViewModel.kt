@@ -13,13 +13,12 @@ class DataViewModel(val repo: DataRepo):ViewModel() {
 
     val getData : MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
 
-    init {
-        getDataResponse()
-    }
+//    init {
+//    }
 
-    fun getDataResponse() =viewModelScope.launch {
+    fun getDataResponse(email:String,password:String) =viewModelScope.launch {
         getData.postValue(Resource.Loading())
-        val response = repo.getAllData()
+        val response = repo.getAllData(email, password)
         getData.postValue(handleGetNetworkResponse(response))
     }
 
