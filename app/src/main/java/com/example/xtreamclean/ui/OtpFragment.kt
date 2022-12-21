@@ -5,19 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.example.xtreamclean.R
-import com.example.xtreamclean.adapter.TaskRecyAdapter
-import com.example.xtreamclean.databinding.FragmentTomorrowBinding
-import com.example.xtreamclean.databinding.FragmentWeekBinding
+import com.example.xtreamclean.databinding.FragmentOtpBinding
+import com.example.xtreamclean.databinding.FragmentRegistrationBinding
 
 
-class WeekFragment : Fragment() {
+class OtpFragment : Fragment() {
 
-    private lateinit var binding : FragmentWeekBinding
-    private lateinit var mList : List<Int>
 
-    private lateinit var weekTaskAdapter : TaskRecyAdapter
+    private lateinit var binding : FragmentOtpBinding
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -30,19 +30,21 @@ class WeekFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentWeekBinding.inflate(layoutInflater)
+        binding = FragmentOtpBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mList = listOf(1, 2, 3)
-        weekTaskAdapter = TaskRecyAdapter(mList)
 
-        binding.weekTaskRecy.apply {
-            adapter = weekTaskAdapter
-            layoutManager = LinearLayoutManager(requireContext())
+        binding.verifyBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_otpFragment_to_homeFragment)
         }
-    }
 
+        val number = "9953595635";
+        val mask = number.replace("\\w(?=\\w{2})".toRegex(),"*")
+
+
+        binding.phoneNoTV.setText(mask);
+    }
 }

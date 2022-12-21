@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.OtpFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/mainGreen"
+            tools:context=".ui.LoginFragment">
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="80dp"
+                android:scaleType="centerInside"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo_png" />
+
+
+            <TextView
+                android:id="@+id/txt1"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forgetPass"
+                android:layout_centerInParent="true"
+                android:text="OTP Verification"
+                android:fontFamily="@font/myriadpro_bold"
+                android:layout_marginTop="15dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/txt2"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt1"
+                android:layout_centerHorizontal="true"
+                android:text="Enter the Otp send to"
+                android:fontFamily="@font/myriadpro_bold"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/phoneNoTV"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt2"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/myriadpro_bold"
+                android:text=""
+                android:textColor="#000000" />
+
+
+            <EditText
+                android:id="@+id/otpEditText"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneNoTV"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/myriadpro_bold"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/resendOtpBtn"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otpEditText"
+                android:layout_centerHorizontal="true"
+                android:text="Didn't recieved the OTP? Resend OTP"
+                android:fontFamily="@font/myriadpro_bold"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/verifyBtn"
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                android:text="VERIFY &amp; PROCEED"
+                android:textAllCaps="false"
+                android:background="#00C853"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_below="@+id/resendOtpBtn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp" />
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</layout>

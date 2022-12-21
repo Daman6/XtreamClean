@@ -1,19 +1,25 @@
 package com.example.xtreamclean.ui
 
 import android.os.Bundle
-import android.view.*
-import androidx.fragment.app.Fragment
-import android.widget.LinearLayout
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.util.Pair
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.innobuzztask.viewModel.DataViewModel
+import com.example.xtreamclean.MainActivity
 import com.example.xtreamclean.R
 import com.example.xtreamclean.adapter.TaskRecyAdapter
 import com.example.xtreamclean.adapter.ViewPagerAdapter
-import com.example.xtreamclean.bottomsheet.CustomBottomSheetDialogFragment
 import com.example.xtreamclean.databinding.FragmentHomeBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.example.xtreamclean.model.LoginResponse
+import com.google.android.material.datepicker.CalendarConstraints
+import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.datepicker.MaterialDatePicker.INPUT_MODE_CALENDAR
 import com.google.android.material.tabs.TabLayoutMediator
 import java.text.SimpleDateFormat
 import java.util.*
@@ -24,6 +30,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var mAdapter: TaskRecyAdapter
     private lateinit var mList: List<Int>
+
     private var outputDateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).apply {
         timeZone = TimeZone.getTimeZone("UTC")
     }
@@ -48,8 +55,12 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         mList = listOf(1, 2, 3)
         mAdapter = TaskRecyAdapter(mList)
+
+
+
 
 //        binding.taskRecy.apply {
 //            adapter = mAdapter
@@ -66,7 +77,7 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_headerBottomFragment)
         }
 
-        binding.searchIconBtn.setOnClickListener {
+        binding.calendarIcon.setOnClickListener {
             setUpDatePicker()
         }
 
@@ -118,15 +129,24 @@ class HomeFragment : Fragment() {
         }
     }
 
+
+
     private fun setUpDatePicker(){
-        val picker = MaterialDatePicker.Builder.datePicker()
+        val calendarConstraintBuilder = CalendarConstraints.Builder()
+        calendarConstraintBuilder.setValidator(DateValidatorPointForward.now())
+
+
+
+        val picker = MaterialDatePicker.Builder.dateRangePicker()
             .setTitleText("Select Date")
-            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .setCalendarConstraints(calendarConstraintBuilder.build())
+            .setSelection(Pair( MaterialDatePicker.thisMonthInUtcMilliseconds(), MaterialDatePicker.todayInUtcMilliseconds()))
             .build()
 
         picker.addOnPositiveButtonClickListener {
-            val dateSelected = outputDateFormat.format(it)
-            Toast.makeText(requireContext(), dateSelected, Toast.LENGTH_SHORT).show()
+            val dateSelected = outputDateFormat.format(it.first)
+            val seconddateSelected = outputDateFormat.format(it.second)
+            Toast.makeText(requireContext(), dateSelected +"----"+seconddateSelected, Toast.LENGTH_SHORT).show()
         }
         picker.addOnNegativeButtonClickListener {
             Toast.makeText(requireContext(), "No Date Selected", Toast.LENGTH_SHORT).show()

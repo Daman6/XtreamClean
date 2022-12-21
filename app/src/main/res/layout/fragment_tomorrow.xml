@@ -1,44 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.TomorrowFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
 
     <LinearLayout
-        android:id="@+id/notaskLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".ui.TomorrowFragment">
+
+        <LinearLayout
+            android:id="@+id/notaskLayout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:scaleType="fitCenter"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_round_chat_24"/>
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="80dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_round_chat_24" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        style="@style/TextAppearance.Material3.LabelMedium"
-        android:textColor="@color/black"
-        android:layout_marginTop="20dp"
-        android:text="No assigned tasks for tomorrow." />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:textColor="@color/black"
+                android:layout_marginTop="20dp"
+                android:text="No assigned tasks for tomorrow." />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        style="@style/TextAppearance.Material3.LabelMedium"
-        android:textColor="@color/black"
-        android:layout_marginTop="5dp"
-        android:text="Try changing your dates to see your assigned task." />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                style="@style/TextAppearance.Material3.LabelMedium"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:text="Try changing your dates to see your assigned task." />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tomorrowTaskRecy" />
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>

@@ -212,15 +212,15 @@
                         android:orientation="horizontal"
                         android:paddingVertical="5dp">
 
-                        <EditText
-                            style="@style/TextAppearance.Material3.LabelMedium"
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodeHolder1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:gravity="start"
-                            android:layout_marginEnd="5dp"
-                            android:hint="Enter first name"
-                            android:textColor="@color/black" />
+                            app:ccp_defaultNameCode="Au"
+                            app:ccp_textSize="12sp"
+                            app:ccp_showArrow="true"
+                            app:ccp_arrowSize="20dp"
+                            app:ccp_showPhoneCode="false"/>
 
                         <EditText
                             style="@style/TextAppearance.Material3.LabelMedium"
@@ -249,15 +249,15 @@
                         android:orientation="horizontal"
                         android:paddingVertical="5dp">
 
-                        <EditText
-                            style="@style/TextAppearance.Material3.LabelMedium"
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodeHolder2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:gravity="start"
-                            android:layout_marginEnd="5dp"
-                            android:hint="Enter first name"
-                            android:textColor="@color/black" />
+                            app:ccp_defaultNameCode="AU"
+                            app:ccp_textSize="12sp"
+                            app:ccp_showArrow="true"
+                            app:ccp_arrowSize="20dp"
+                            app:ccp_showPhoneCode="false"/>
 
                         <EditText
                             style="@style/TextAppearance.Material3.LabelMedium"
@@ -310,6 +310,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="10dp"
                         android:src="@drawable/ic_baseline_arrow_forward_ios_24" />
+
 
 
                 </RelativeLayout>

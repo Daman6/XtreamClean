@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.RegistrationFragment">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/mainGreen"
+            tools:context=".ui.LoginFragment">
+
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="50dp"
+                android:scaleType="centerInside"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo_png" />
+
+
+            <EditText
+                android:id="@+id/firstNameEditText"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/myriadpro_regular"
+                android:hint="First Name"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
+
+            <EditText
+                android:id="@+id/lastNameditText"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColorHint="@color/black"
+                android:layout_below="@id/firstNameEditText"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColorHint="@color/black"
+                android:layout_below="@id/lastNameditText"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/phoneNoEditText"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:hint="Phone No."
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColorHint="@color/black"
+                android:layout_below="@id/emailEditText"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColorHint="@color/black"
+                android:layout_below="@id/phoneNoEditText"
+                android:layout_centerHorizontal="true" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/getOtpBtn"
+                android:layout_width="290dp"
+                android:layout_height="35dp"
+                android:text="GET OTP"
+                android:textAllCaps="false"
+                android:background="#00C853"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColor="@color/white"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_below="@+id/passwordEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp" />
+
+            <TextView
+                android:id="@+id/signIn"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/getOtpBtn"
+                android:layout_centerHorizontal="true"
+                android:text="Already have an Account? Sign in"
+                android:fontFamily="@font/myriadpro_regular"
+                android:layout_marginTop="15dp"
+                android:textColor="#000000" />
+
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+</layout>

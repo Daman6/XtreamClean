@@ -71,6 +71,17 @@
             android:fontFamily="@font/myriadpro_regular"
             android:layout_marginTop="15dp"
             android:textColor="#8A8A8A" />
+        <TextView
+            android:id="@+id/signUp"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forgetPass"
+            android:layout_centerHorizontal="true"
+            android:text="Don't have an Account? Sign up"
+            android:fontFamily="@font/myriadpro_regular"
+            android:layout_marginTop="15dp"
+            android:textColor="#000000" />
 
 
     </RelativeLayout>

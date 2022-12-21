@@ -7,41 +7,38 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.xtreamclean.R
-import com.example.xtreamclean.databinding.FragmentHomeBinding
 import com.example.xtreamclean.databinding.FragmentLoginBinding
+import com.example.xtreamclean.databinding.FragmentOtpBinding
+import com.example.xtreamclean.databinding.FragmentRegistrationBinding
 
+class RegistrationFragment : Fragment() {
 
-class LoginFragment : Fragment() {
+    private lateinit var binding : FragmentRegistrationBinding
 
-    private lateinit var binding : FragmentLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {
 
+        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(layoutInflater)
+        binding = FragmentRegistrationBinding.inflate(layoutInflater)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.signInBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-        }
-        binding.forgetPass.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_forgetFragment)
+
+        binding.getOtpBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_registrationFragment_to_otpFragment)
         }
 
-        binding.signUp.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+        binding.signIn.setOnClickListener {
+            findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
         }
-
     }
-
 
 }

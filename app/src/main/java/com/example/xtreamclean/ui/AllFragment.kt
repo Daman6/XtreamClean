@@ -5,10 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.xtreamclean.R
+import com.example.xtreamclean.adapter.TaskRecyAdapter
+import com.example.xtreamclean.databinding.FragmentAllBinding
+import com.example.xtreamclean.databinding.FragmentWeekBinding
 
 
 class AllFragment : Fragment() {
+
+    private lateinit var binding : FragmentAllBinding
+    private lateinit var mList : List<Int>
+    private lateinit var allTaskAdapter : TaskRecyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,8 +29,19 @@ class AllFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_all, container, false)
+        binding = FragmentAllBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mList = listOf(1, 2, 3)
+        allTaskAdapter = TaskRecyAdapter(mList)
+
+        binding.allTaskRecy.apply {
+            adapter = allTaskAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+        }
     }
 
 }

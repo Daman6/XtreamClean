@@ -41,6 +41,11 @@ class HeaderBottomFragment : Fragment() {
         binding.profileTextLayout.setOnClickListener {
             findNavController().navigate(R.id.action_headerBottomFragment_to_profileFragment)
         }
+        binding.supportTextLayout.setOnClickListener {
+            findNavController().navigate(R.id.action_headerBottomFragment_to_chatFragment)
+        }
+
+
 
         binding.hamMenuBtn.setOnClickListener {
             if (!binding.drawerLayout.isDrawerOpen(GravityCompat.START)) binding.drawerLayout.openDrawer(
