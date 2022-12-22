@@ -15,12 +15,13 @@ import com.example.innobuzztask.viewModel.DataViewModel
 import com.example.innobuzztask.viewModel.DataViewModelProviderFactory
 import com.example.xtreamclean.databinding.ActivityMainBinding
 import com.example.xtreamclean.model.LoginResponse
+import java.text.SimpleDateFormat
 
 class MainActivity : AppCompatActivity() {
 
 //    lateinit var toggle: ActionBarDrawerToggle
     private lateinit var binding: ActivityMainBinding
-    private lateinit var viewModel : DataViewModel
+    lateinit var viewModel : DataViewModel
     private lateinit var list:MutableList<LoginResponse>
 
 
@@ -36,8 +37,8 @@ class MainActivity : AppCompatActivity() {
         viewModel  = ViewModelProvider(this,viewModelProviderFactory).get(DataViewModel::class.java)
 
         list = mutableListOf()
-        viewModel.getDataResponse("admin@admin.com","admin@123")
-        observeUserLogin()
+//        viewModel.getDataResponse("user@user.com","user@123")
+//        observeUserLogin()
 
 
 //        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //            true
 //        }
+
     }
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -63,21 +65,21 @@ class MainActivity : AppCompatActivity() {
 //        return super.onOptionsItemSelected(item)
 //    }
 
-    private fun observeUserLogin() {
-        viewModel.getData.observe(this, Observer {
-            when (it) {
-                is Resource.Loading -> {
-
-                }
-                is Resource.Success -> {
-                    Log.e("sacas",it.data?.data?.email.toString())
-                }
-
-                is Resource.Error -> {
-//                    Toast.makeText(requireContext(), "" + it.data!!.message, Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
-    }
+//    private fun observeUserLogin() {
+//        viewModel.getData.observe(this, Observer {
+//            when (it) {
+//                is Resource.Loading -> {
+//
+//                }
+//                is Resource.Success -> {
+//                    Log.e("sacas",it.data?.data?.role.toString())
+//                }
+//
+//                is Resource.Error -> {
+////                    Toast.makeText(requireContext(), "" + it.data!!.message, Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        })
+//    }
 
 }

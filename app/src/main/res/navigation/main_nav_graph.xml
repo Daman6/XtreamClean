@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userHomeFragment"
+            app:destination="@id/userHomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgetFragment"
@@ -114,6 +117,9 @@
         <action
             android:id="@+id/action_headerBottomFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_headerBottomFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/issuesFragment"
@@ -195,5 +201,17 @@
         <action
             android:id="@+id/action_otpFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userHomeFragment"
+        android:name="com.example.xtreamclean.ui.userUiFragments.userHomeFragment"
+        android:label="userHomeFragment"
+        tools:layout="@layout/fragment_user_home">
+        <action
+            android:id="@+id/action_userHomeFragment_to_headerBottomFragment"
+            app:destination="@id/headerBottomFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

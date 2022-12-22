@@ -9,4 +9,6 @@ class DataRepo() {
 
     suspend fun getAllData(email:String,password:String )= RetrofitInstance.api.getData(email, password)
 
+    suspend fun logoutUser(id:String)= RetrofitInstance.api.logoutUser(id)
+
 }

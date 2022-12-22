@@ -106,7 +106,7 @@
 
                 <ImageView
                     android:id="@+id/calendarIcon"
-                    android:layout_width="60dp"
+                    android:layout_width="40dp"
                     android:background="@color/mainGreen"
                     android:layout_height="match_parent"
                     android:scaleType="centerInside"

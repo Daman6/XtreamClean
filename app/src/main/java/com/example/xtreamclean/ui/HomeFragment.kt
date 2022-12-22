@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.core.util.Pair
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -56,8 +57,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mList = listOf(1, 2, 3)
-        mAdapter = TaskRecyAdapter(mList)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                requireActivity().finish()
+            }
+
+        })
+
+//        mList = listOf(1, 2, 3)
+//        mAdapter = TaskRecyAdapter(mList)
 
 
 

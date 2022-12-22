@@ -5,6 +5,7 @@ data class Data(
     val email: String,
     val id: String,
     val password: String,
+    val role: String,
     val status: String,
     val updated_at: String
 )

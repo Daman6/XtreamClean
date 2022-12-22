@@ -38,25 +38,25 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/dueText"
+                    android:id="@+id/dueDateText"
                     style="@style/TextAppearance.Material3.LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:fontFamily="@font/myriadpro_regular"
-                    android:text="Due on Sun, Sep 4"
+                    android:text="Due on Test Sun, Sep 4"
                     android:textColor="#2E7D32"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="@+id/imageView" />
 
                 <TextView
-                    android:id="@+id/overdueText"
+                    android:id="@+id/statusText"
                     style="@style/TextAppearance.Material3.LabelSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/myriadpro_bold"
-                    android:text="OVERDUE"
+                    android:text="TEST"
                     android:textAllCaps="true"
                     android:textColor="#2E7D32"
                     android:textStyle="bold"
@@ -74,12 +74,13 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/addressTitleText"
+                    android:id="@+id/propertyTitleText"
                     style="@style/TextAppearance.Material3.TitleMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/myriadpro_regular"
-                    android:text="Test Street, 8"
+                    android:text="Test"
+                    android:maxLines="1"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -87,8 +88,9 @@
                     style="@style/TextAppearance.Material3.LabelSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:maxLines="1"
                     android:fontFamily="@font/myriadpro_regular"
-                    android:text="8 Lentara Street" />
+                    android:text="Test" />
 
 
                 <TextView
@@ -97,8 +99,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:maxLines="1"
                     android:fontFamily="@font/myriadpro_regular"
-                    android:text="Guest Stay General Departure Test" />
+                    android:text="Guest Test" />
 
                 <View
                     android:layout_width="match_parent"
@@ -123,6 +126,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
+                            android:id="@+id/priorityIcon"
                             android:layout_width="20dp"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="4dp"
@@ -142,14 +146,14 @@
                         app:layout_constraintTop_toTopOf="@+id/cardView">
 
                         <TextView
-                            android:id="@+id/outTimeText"
+                            android:id="@+id/checkoutTimeText"
                             style="@style/TextAppearance.Material3.LabelSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="10dp"
                             android:layout_marginVertical="3dp"
                             android:fontFamily="@font/myriadpro_regular"
-                            android:text="OUT 2:04PM"
+                            android:text="OUT Test"
                             android:textColor="@color/black" />
 
                     </androidx.cardview.widget.CardView>
