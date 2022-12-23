@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainGreen"
+        tools:context=".ui.LoginFragment">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="80dp"
+            android:scaleType="centerInside"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/logo_png" />
+
+
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:hint="Email"
+            android:fontFamily="@font/myriadpro_regular"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColor="@color/black"
+            android:fontFamily="@font/myriadpro_regular"
+            android:textColorHint="@color/black"
+            android:layout_below="@id/emailEditText"
+            android:layout_centerHorizontal="true" />
+
+        <FrameLayout
+            android:id="@+id/signInBtn"
+            android:layout_width="290dp"
+            android:layout_height="35dp"
+            android:background="#00C853"
+            android:layout_below="@+id/passwordEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" >
+
+            <TextView
+                android:id="@+id/signInText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/myriadpro_regular"
+                android:textSize="18dp"/>
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/progessBar"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+        <!--        <androidx.appcompat.widget.AppCompatButton-->
+        <!--            android:id="@+id/signInBtn"-->
+        <!--            android:layout_width="290dp"-->
+        <!--            android:layout_height="35dp"-->
+        <!--            android:text="Sign in"-->
+        <!--            android:textAllCaps="false"-->
+        <!--            android:background="#00C853"-->
+        <!--            android:fontFamily="@font/myriadpro_regular"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            style="@style/TextAppearance.Material3.TitleMedium"-->
+        <!--            android:layout_below="@+id/passwordEditText"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:layout_marginTop="40dp" />-->
+
+
+        <TextView
+            android:id="@+id/forgetPass"
+            style="@style/TextAppearance.Material3.LabelLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signInBtn"
+            android:layout_centerHorizontal="true"
+            android:text="Forgot Password?"
+            android:fontFamily="@font/myriadpro_regular"
+            android:layout_marginTop="15dp"
+            android:textColor="#8A8A8A" />
+
+        <LinearLayout
+            android:id="@+id/signUp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/forgetPass">
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an Account? "
+                android:fontFamily="@font/myriadpro_regular"
+                android:textColor="#000000" />
+            <TextView
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                android:textStyle="bold"
+                android:fontFamily="@font/myriadpro_bold"
+                android:textColor="#2E7D32" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

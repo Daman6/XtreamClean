@@ -17,6 +17,7 @@ import com.example.xtreamclean.adapter.TaskRecyAdapter
 import com.example.xtreamclean.adapter.ViewPagerAdapter
 import com.example.xtreamclean.databinding.FragmentHomeBinding
 import com.example.xtreamclean.model.LoginResponse
+import com.example.xtreamclean.utils.SavedPreference
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -56,6 +57,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object : OnBackPressedCallback(true){
             override fun handleOnBackPressed() {

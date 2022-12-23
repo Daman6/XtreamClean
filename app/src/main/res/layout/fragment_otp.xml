@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -66,14 +67,19 @@
                 android:textColor="#000000" />
 
 
-            <EditText
+            <com.chaos.view.PinView
                 android:id="@+id/otpEditText"
+                android:padding="4dp"
                 style="@style/TextAppearance.Material3.BodyLarge"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/phoneNoTV"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="2dp"
+                app:itemCount="4"
+                app:itemHeight="40dp"
+                app:itemWidth="30dp"
+                app:lineWidth="1dp"
                 android:fontFamily="@font/myriadpro_bold"
                 android:textColor="#000000" />
 

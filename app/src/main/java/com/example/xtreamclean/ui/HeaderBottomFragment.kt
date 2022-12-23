@@ -1,5 +1,6 @@
 package com.example.xtreamclean.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,8 @@ import com.example.innobuzztask.viewModel.DataViewModel
 import com.example.xtreamclean.MainActivity
 import com.example.xtreamclean.R
 import com.example.xtreamclean.databinding.FragmentHeaderBottomBinding
+import com.example.xtreamclean.ui.activities.LoginActivity
+import com.example.xtreamclean.utils.SavedPreference
 
 
 class HeaderBottomFragment : Fragment() {
@@ -55,6 +58,10 @@ class HeaderBottomFragment : Fragment() {
             findNavController().navigate(R.id.action_headerBottomFragment_to_chatFragment)
         }
         binding.signoutTextLayout.setOnClickListener {
+            SavedPreference.setSession(requireContext(),"LoggedOut")
+            startActivity(Intent(requireContext(),LoginActivity::class.java))
+//
+//            Toast.makeText(requireContext(), SavedPreference.getSession(requireContext()), Toast.LENGTH_SHORT).show()
             viewModel.logoutUserDataResponse("1")
             observeUserLogout()
         }
@@ -95,7 +102,19 @@ class HeaderBottomFragment : Fragment() {
                 }
                 is Resource.Success -> {
                     if (it.data?.status.toString() == "success"){
-                        findNavController().navigate(R.id.action_headerBottomFragment_to_loginFragment)
+//                        SavedPreference.setSession(requireContext(),"LoggedOut")
+//                        startActivity(Intent(requireContext(),LoginActivity::class.java))
+
+//                        Toast.makeText(requireContext(), SavedPreference.getSession(requireContext()), Toast.LENGTH_SHORT).show()
+
+//                        SavedPreference.setSession(requireContext(),"LoggedOut")
+                        Toast.makeText(requireContext(), "logout", Toast.LENGTH_SHORT).show()
+//                        startActivity(Intent(requireContext(),LoginActivity::class.java))
+
+//                        startActivity(Intent(requireContext(),LoginActivity::class.java))
+////                        findNavController().navigate(R.id.action_headerBottomFragment_to_loginFragment)
+//                        SavedPreference.setSession(requireContext(),"LoggedOut")
+
                     }else{
                         Toast.makeText(requireContext(), "Unable to logout", Toast.LENGTH_SHORT).show()
                     }

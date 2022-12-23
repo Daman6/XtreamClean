@@ -1,9 +1,11 @@
 package com.example.xtreamclean.adapter.userUIAdapters
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xtreamclean.R
@@ -33,17 +35,19 @@ class ServicesParentRecyAdapter (private val tilteList : List<String>,private va
             layoutManager= linearLayoutManager
             adapter = childRecyAdapter
         }
-        holder.itemView.apply {
-//            holder.binding.title.text= current.title.toString()
-//            setOnClickListener {
-//                val bundle = Bundle()
-//                bundle.putString("title",current.title)
-//                bundle.putInt("id",current.id)
-//                bundle.putInt("userId",current.userId)
-//                bundle.putString("body",current.body)
-//
-//                findNavController().navigate(R.id.action_homeFragment_to_contentFragment,bundle)
-//            }
+        holder.binding.linear.apply {
+            setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("service_title",current.toString())
+                findNavController().navigate(R.id.action_userHomeFragment_to_serviceDetailFragment,bundle)
+            }
+        }
+        holder.binding.serviceImagesRecy.apply {
+            setOnClickListener {
+                val bundle = Bundle()
+                bundle.putString("service_title",current.toString())
+                findNavController().navigate(R.id.action_userHomeFragment_to_serviceDetailFragment,bundle)
+            }
         }
 
 

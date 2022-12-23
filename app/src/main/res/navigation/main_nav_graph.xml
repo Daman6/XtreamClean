@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -213,5 +213,13 @@
         <action
             android:id="@+id/action_userHomeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_userHomeFragment_to_serviceDetailFragment"
+            app:destination="@id/serviceDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/serviceDetailFragment"
+        android:name="com.example.xtreamclean.ui.userUiFragments.ServiceDetailFragment"
+        android:label="ServiceDetailFragment"
+        tools:layout="@layout/fragment_service_detail"/>
 </navigation>

@@ -3,6 +3,7 @@ package com.example.xtreamclean.adapter.userUIAdapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xtreamclean.R
 import com.example.xtreamclean.databinding.ServicesImagesItemLayoutBinding
@@ -24,6 +25,7 @@ class ServicesChildRecyAdapter (private val imagesList : List<Int>): RecyclerVie
     override fun onBindViewHolder(holder: servicesChildRecyAdapterViewHolder, position: Int) {
         val current = imagesList[position]
         holder.binding.servicesImages.setImageResource(current)
+
 
     }
 

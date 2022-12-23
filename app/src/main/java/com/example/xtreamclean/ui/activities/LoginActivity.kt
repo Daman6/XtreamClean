@@ -1,74 +1,58 @@
-package com.example.xtreamclean.ui
+package com.example.xtreamclean.ui.activities
 
-import android.app.Activity
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.util.Log
-import android.util.Patterns
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.innobuzztask.api.dataApi
+import com.example.innobuzztask.repo.DataRepo
 import com.example.innobuzztask.utils.Resource
 import com.example.innobuzztask.viewModel.DataViewModel
+import com.example.innobuzztask.viewModel.DataViewModelProviderFactory
 import com.example.xtreamclean.MainActivity
 import com.example.xtreamclean.R
-import com.example.xtreamclean.databinding.FragmentHomeBinding
-import com.example.xtreamclean.databinding.FragmentLoginBinding
-import com.example.xtreamclean.model.LoginResponse
+import com.example.xtreamclean.databinding.ActivityLoginBinding
 import com.example.xtreamclean.utils.SavedPreference
-import com.futuremind.recyclerviewfastscroll.Utils
-import kotlin.math.log
 
-
-class LoginFragment : Fragment() {
-
-    private lateinit var binding : FragmentLoginBinding
+class LoginActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityLoginBinding
     private lateinit var viewModel : DataViewModel
-    private lateinit var list:MutableList<LoginResponse>
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    }
+        val repo = DataRepo()
+        val viewModelProviderFactory = DataViewModelProviderFactory(repo)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(layoutInflater)
-        return binding.root
-    }
+        viewModel = ViewModelProvider(this,viewModelProviderFactory).get(DataViewModel::class.java)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel = (activity as MainActivity).viewModel
-
-        var session = SavedPreference.getSession(requireContext()).toString()
+        var session = SavedPreference.getSession(this).toString()
         Log.e("dbkabk",session.toString())
 
         if(session =="LoggedIn"){
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+
+            startActivity(Intent(this,MainActivity::class.java))
+//            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
-        if (session == "LoggedOut"){
-            findNavController().navigate(R.id.loginFragment)
-        }
+//        if (session == "LoggedOut"){
+//            startActivity(Intent(this,LoginActivity::class.java))
+//        }
 
 
-        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object : OnBackPressedCallback(true){
-            override fun handleOnBackPressed() {
-                requireActivity().finish()
-            }
-
-        })
+//        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,object : OnBackPressedCallback(true){
+//            override fun handleOnBackPressed() {
+//                requireActivity().finish()
+//            }
+//
+//        })
 //        (activity as MainActivity).onBackPressed().apply {
 //            Toast.makeText(requireContext(), "back", Toast.LENGTH_SHORT).show()
 //        }
@@ -80,15 +64,15 @@ class LoginFragment : Fragment() {
 
         }
         binding.forgetPass.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_forgetFragment)
+//            findNavController().navigate(R.id.action_loginFragment_to_forgetFragment)
         }
 
         binding.signUp.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
+//            findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
 
-    }
 
+    }
     private fun checkUserDetails() {
 
         binding.emailEditText.text.toString()
@@ -118,7 +102,7 @@ class LoginFragment : Fragment() {
 //    }
 
     private fun observeUserLogin() {
-        viewModel.getData.observe(viewLifecycleOwner, Observer {
+        viewModel.getData.observe(this, Observer {
             when (it) {
                 is Resource.Loading -> {
 
@@ -126,25 +110,28 @@ class LoginFragment : Fragment() {
                 is Resource.Success -> {
                     if (it.data?.status.toString() == "success"){
                         if (it.data?.data?.role.toString() == "U"){
-                            SavedPreference.setSession(requireContext(),"loggedIn")
-                            findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
+                            SavedPreference.setSession(this,"LoggedIn")
+//                            findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
+                            startActivity(Intent(this,MainActivity::class.java))
+
                             binding.progessBar.visibility = View.INVISIBLE
                             binding.signInText.visibility = View.VISIBLE
                         }else{
-                            SavedPreference.setSession(requireContext(),"LoggedIn")
-                            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                            SavedPreference.setSession(this,"LoggedIn")
+//                            findNavController().navigate(R.id.action_loginFragment_to_userHomeFragment)
+                            startActivity(Intent(this,MainActivity::class.java))
                             binding.progessBar.visibility = View.INVISIBLE
                             binding.signInText.visibility = View.VISIBLE
                         }
                     }else{
-                        Toast.makeText(requireContext(), "" + it.data?.result.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "" + it.data?.result.toString(), Toast.LENGTH_SHORT).show()
                         binding.progessBar.visibility = View.INVISIBLE
                         binding.signInText.visibility = View.VISIBLE
                     }
                 }
 
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(), "" + it.data?.result.toString(), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "" + it.data?.result.toString(), Toast.LENGTH_SHORT).show()
                     binding.progessBar.visibility = View.INVISIBLE
                     binding.signInText.visibility = View.VISIBLE
                 }
@@ -152,6 +139,10 @@ class LoginFragment : Fragment() {
         })
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.finish()
+        this.finishAffinity()
 
-
+    }
 }
